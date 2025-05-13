@@ -17,14 +17,10 @@ func main() {
 		AllowOrigins: Config.CorsOrigins,
 	}))
 
-	setupRoutes(app)
+	app.Get("/", apiHandler)
 
 	log.Println("Running '" + Config.Env + "' environment on port: " + Config.Port)
 	app.Listen(":" + Config.Port)
-}
-
-func setupRoutes(app *fiber.App) {
-	app.Get("/", apiHandler)
 }
 
 func apiHandler(c *fiber.Ctx) error {
