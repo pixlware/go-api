@@ -1,4 +1,4 @@
-module go-api-bp
+module go-api
 
 go 1.21.1
 
